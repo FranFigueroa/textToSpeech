@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState, useEffect } from 'react';
+import { Text, View, Button } from 'react-native';
+import Tts from 'react-native-tts';
+import { useSegmentarTextoEnOraciones } from './hooks/useSegmentarTextoEnOraciones';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+const App: React.FC = () => {
+
+  useEffect(() =>{
+    const textoEjemplo = 'Oracion1. Oracion2';
+    const oracionesSegmentadas = useSegmentarTextoEnOraciones(textoEjemplo);
+    console.log(oracionesSegmentadas)
+  },[]);  
+
+  return(
+    <View>
+      <Text>aoeu. Texto ejemplo</Text>
     </View>
-  );
-}
+  )
+  
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
