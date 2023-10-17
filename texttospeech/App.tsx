@@ -19,4 +19,6 @@ const App: React.FC = () => {
   
 };
 
+styles.
+
 export default App;
